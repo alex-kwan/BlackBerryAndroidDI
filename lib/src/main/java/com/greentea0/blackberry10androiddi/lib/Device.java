@@ -17,6 +17,7 @@ public class Device {
     public static Device getInstance(){
         if( null == _instance ) {
             _instance = new Device();
+            //This might be inefficient but then we are only doing this once.
             _instance.init(android.os.Build.MODEL, Build.MANUFACTURER);
         }
         return _instance;
