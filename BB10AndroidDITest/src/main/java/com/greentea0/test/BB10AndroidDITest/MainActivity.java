@@ -1,19 +1,19 @@
-package com.greentea0.test.BB10AndroidDITest;
+ package com.greentea0.test.BB10AndroidDITest;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+ import android.content.Context;
+ import android.os.Bundle;
+ import android.support.v4.app.Fragment;
+ import android.support.v7.app.ActionBarActivity;
+ import android.view.LayoutInflater;
+ import android.view.Menu;
+ import android.view.MenuItem;
+ import android.view.View;
+ import android.view.ViewGroup;
+ import android.widget.Toast;
 
+ import com.greentea0.blackberry10androiddi.lib.Device;
 
-
-public class MainActivity extends ActionBarActivity {
+ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +34,31 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    private void toastMsg(String msg){
+        Context context = getApplicationContext();
+        CharSequence text = msg;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch(item.getItemId()){
+            case R.id.action_settings :
+
+                return true;
+            case R.id.action_isSmall :
+                toastMsg("This is a small screen device : "+Device.getInstance().isSmallDevice());
+                break;
+            case R.id.action_isBB10 :
+                toastMsg("This is BB10 : "+Device.getInstance().isBlackBerry());
+                break;
+            default : break;
         }
         return super.onOptionsItemSelected(item);
     }

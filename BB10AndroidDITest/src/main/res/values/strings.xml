@@ -4,5 +4,6 @@
     <string name="app_name">BlackBerryAndroidDITestApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="action_isBB10">Is BB10?</string>
+    <string name="action_isSquareScreen">Is 720x720?</string>
 </resources>

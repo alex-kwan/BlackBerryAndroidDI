@@ -6,4 +6,12 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
+    <item android:id="@+id/action_isBB10"
+        android:title="@string/action_isBB10"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_isSmall"
+        android:title="@string/action_isSquareScreen"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 </menu>
